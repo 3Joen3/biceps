@@ -1,5 +1,3 @@
-import "./globals.css";
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +12,10 @@ export const roboto = Roboto({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
+import "./globals.css";
+import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`h-full ${roboto.className} antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col gap-3">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
