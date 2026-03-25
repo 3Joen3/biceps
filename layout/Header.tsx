@@ -14,7 +14,13 @@ export default function Header() {
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-3">
-      <Image src="/images/biceps-logga.png" alt="Logotyp" height={64} width={64} />
+      <Image
+        className="rounded-xl"
+        src="/images/biceps-logga.png"
+        alt="Logotyp"
+        height={60}
+        width={60}
+      />
       <span className="uppercase font-extrabold text-5xl">Biceps</span>
     </Link>
   );
