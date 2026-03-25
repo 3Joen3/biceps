@@ -15,7 +15,7 @@ export const montserrat = Montserrat({
 import "./globals.css";
 import Header from "@/layout/Header/Header";
 import Footer from "@/layout/Footer";
-import AnnouncementBar from "@/layout/AnnouncementBar";
+import TopBar from "@/layout/TopBar";
 
 export default function RootLayout({
   children,
@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className={`h-full ${montserrat.className} antialiased`}>
       <body>
         <Header />
-        <AnnouncementBar />
+        <TopBar />
         {children}
         <Footer />
       </body>
