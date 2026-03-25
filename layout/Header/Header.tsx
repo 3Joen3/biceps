@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="py-3 bg-red-600 text-white">
+    <header className="py-3 bg-gray-400 text-white">
       <div className="w-[94%] mx-auto">
         <Logo />
       </div>
