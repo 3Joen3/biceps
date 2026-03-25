@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import CartButton from "./CartButton";
 
 export default function Header() {
   return (
-    <header className="py-3 bg-gray-400 text-white">
-      <div className="w-[94%] mx-auto">
+    <header className="py-3 bg-gray-500 text-white">
+      <div className="w-[94%] mx-auto flex items-center justify-between">
         <Logo />
+        <CartButton />
       </div>
     </header>
   );

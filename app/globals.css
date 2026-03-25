@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@utility btn {
+  @apply cursor-pointer;
+}
