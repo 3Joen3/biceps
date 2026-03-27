@@ -4,5 +4,5 @@ interface Props {
 }
 
 export default function Page({ className, children }: Props) {
-  return <main className={`w-[94%] mx-auto ${className}`}>{children}</main>;
+  return <main className={`w-[94%] mx-auto my-3 ${className}`}>{children}</main>;
 }
