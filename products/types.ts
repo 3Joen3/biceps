@@ -1,6 +1,7 @@
 export interface Product {
   name: string;
   options: ProductOption[];
+  variants: ProductVariant[];
 }
 
 export interface ProductOption {
@@ -10,4 +11,8 @@ export interface ProductOption {
 
 export interface ProductOptionValue {
   value: string;
+}
+
+export interface ProductVariant {
+  price: number;
 }

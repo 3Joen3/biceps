@@ -14,12 +14,12 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <Page className="grid grid-cols-2 gap-3">
-      <div className="aspect-square relative border">
+      <div className="aspect-square relative border rounded-xl overflow-hidden">
         <Image src="/images/dummy/hantlar-5-kg.png" alt="Dummy Image" fill />
       </div>
       <div className="flex flex-col gap-3">
         <h1 className="text-3xl font-semibold">{product.name}</h1>
-        <BuySection />
+        <BuySection product={product} />
       </div>
     </Page>
   );
