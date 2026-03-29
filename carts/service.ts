@@ -1,3 +1,7 @@
-import { AddToCartRequest } from "./types";
+"use server";
 
-export async function AddToCartAsync(request: AddToCartRequest) {}
+import { AddCartItemRequest } from "./types";
+
+export async function AddToCartAsync(request: AddCartItemRequest[]) {
+  console.log(request);
+}

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Product, ProductVariant } from "../types";
+import { AddCartItemRequest } from "@/carts/types";
+import { AddToCartAsync } from "@/carts/service";
 
 import QuantitySelector from "./QuantitySelector";
 import OptionValueSelector from "./OptionValueSelector";
@@ -33,11 +35,9 @@ export default function BuySection({ product }: Props) {
     setVariant(selectedVariant);
   }
 
-  function handleAddToCart() {
-    console.log({
-      productVariantId: variant.id,
-      quantity,
-    });
+  async function handleAddToCart() {
+    const request: AddCartItemRequest[] = [{ productVariantId: variant.id, quantity: quantity }];
+    await AddToCartAsync(request);
   }
 
   return (
