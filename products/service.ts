@@ -20,6 +20,7 @@ export async function getProductBySlugAsync(slug: string): Promise<Product> {
 
     variants: [
       {
+        id: 1,
         price: 199,
         options: [
           {
@@ -29,6 +30,7 @@ export async function getProductBySlugAsync(slug: string): Promise<Product> {
         ],
       },
       {
+        id: 2,
         price: 299,
         options: [
           {
@@ -38,6 +40,7 @@ export async function getProductBySlugAsync(slug: string): Promise<Product> {
         ],
       },
       {
+        id: 3,
         price: 399,
         options: [
           {

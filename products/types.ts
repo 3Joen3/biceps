@@ -16,6 +16,7 @@ export interface ProductOptionValue {
 }
 
 export interface ProductVariant {
+  id: number;
   options: ProductVariantOption[];
   price: number;
 }
