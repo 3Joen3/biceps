@@ -2,7 +2,7 @@
 
 import { Product } from "./types";
 
-export async function getProductBySlug(slug: string): Promise<Product> {
+export async function getProductBySlugAsync(slug: string): Promise<Product> {
   const product: Product = {
     name: "Hantlar 5 - 20 kg",
 

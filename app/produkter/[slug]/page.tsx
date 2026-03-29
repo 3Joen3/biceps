@@ -1,4 +1,4 @@
-import { getProductBySlug } from "@/products/service";
+import { getProductBySlugAsync } from "@/products/service";
 
 import Page from "@/layout/Page";
 import Image from "next/image";
@@ -10,7 +10,7 @@ interface Props {
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  const product = await getProductBySlug(slug);
+  const product = await getProductBySlugAsync(slug);
 
   return (
     <Page className="grid grid-cols-2 gap-3">
