@@ -19,7 +19,7 @@ export default async function ProductPage({ params }: Props) {
       </div>
       <div className="flex flex-col gap-3">
         <h1 className="text-3xl font-semibold uppercase">{product.name}</h1>
-        <BuySection />
+        <BuySection product={product} />
       </div>
     </Page>
   );

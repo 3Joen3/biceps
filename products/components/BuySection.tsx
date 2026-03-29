@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { ProductVariant } from "../types";
+import { Product, ProductVariant } from "../types";
 
-export default function BuySection() {
-  const [variant, setVariant] = useState<ProductVariant>();
-  const [quantity, setQuantity] = useState<number>();
+interface Props {
+  product: Product;
+}
 
-  return <div>BuySection</div>;
+export default function BuySection({ product }: Props) {
+  const [variant, setVariant] = useState<ProductVariant>(product.variants[0]);
+  const [quantity, setQuantity] = useState<number>(1);
+
+  return (
+    <div>
+      <p>{variant.price} kr</p>
+    </div>
+  );
 }
