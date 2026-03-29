@@ -5,6 +5,7 @@ import { Product, ProductVariant } from "../types";
 
 import QuantitySelector from "./QuantitySelector";
 import OptionValueSelector from "./OptionValueSelector";
+import AddToCartButton from "./AddToCartButton";
 
 interface Props {
   product: Product;
@@ -45,6 +46,8 @@ export default function BuySection({ product }: Props) {
         onDecrease={decreaseQuantity}
         onIncrease={increaseQuantity}
       />
+
+      <AddToCartButton />
     </div>
   );
 }
