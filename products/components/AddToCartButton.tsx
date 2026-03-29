@@ -1,3 +1,11 @@
-export default function AddToCartButton() {
-  return <button className="btn">Lägg i varukorgen</button>;
+interface Props {
+  onClick: () => void;
+}
+
+export default function AddToCartButton({ onClick }: Props) {
+  return (
+    <button className="btn" onClick={onClick}>
+      Lägg i varukorgen
+    </button>
+  );
 }

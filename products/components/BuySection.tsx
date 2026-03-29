@@ -33,6 +33,13 @@ export default function BuySection({ product }: Props) {
     setVariant(selectedVariant);
   }
 
+  function handleAddToCart() {
+    console.log({
+      productVariantId: variant.id,
+      quantity,
+    });
+  }
+
   return (
     <div>
       <p className="text-2xl font-medium">{variant.price} kr</p>
@@ -47,7 +54,7 @@ export default function BuySection({ product }: Props) {
         onIncrease={increaseQuantity}
       />
 
-      <AddToCartButton />
+      <AddToCartButton onClick={handleAddToCart} />
     </div>
   );
 }
