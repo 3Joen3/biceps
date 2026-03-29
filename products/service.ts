@@ -8,23 +8,43 @@ export async function getProductBySlug(slug: string): Promise<Product> {
 
     options: [
       {
+        id: 1,
         name: "Vikt",
-        values: [{ value: "5kg" }, { value: "10kg" }, { value: "20kg" }],
+        values: [
+          { id: 1, name: "5kg" },
+          { id: 2, name: "10kg" },
+          { id: 3, name: "20kg" },
+        ],
       },
     ],
 
     variants: [
       {
         price: 199,
-        options: [{ name: "Vikt", value: "5kg" }],
+        options: [
+          {
+            optionId: 1,
+            optionValueId: 1,
+          },
+        ],
       },
       {
         price: 299,
-        options: [{ name: "Vikt", value: "10kg" }],
+        options: [
+          {
+            optionId: 1,
+            optionValueId: 2,
+          },
+        ],
       },
       {
         price: 399,
-        options: [{ name: "Vikt", value: "20kg" }],
+        options: [
+          {
+            optionId: 1,
+            optionValueId: 3,
+          },
+        ],
       },
     ],
   };

@@ -5,12 +5,14 @@ export interface Product {
 }
 
 export interface ProductOption {
+  id: number;
   name: string;
   values: ProductOptionValue[];
 }
 
 export interface ProductOptionValue {
-  value: string;
+  id: number;
+  name: string;
 }
 
 export interface ProductVariant {
@@ -19,6 +21,6 @@ export interface ProductVariant {
 }
 
 export interface ProductVariantOption {
-  name: string;
-  value: string;
+  optionId: number;
+  optionValueId: number;
 }

@@ -22,12 +22,22 @@ export default function BuySection({ product }: Props) {
     setQuantity((quantity) => quantity + 1);
   }
 
+  function handleSelectOptionValue(optionValueId: number) {
+    const selectedVariant = product.variants.find((variant) =>
+      variant.options.some((option) => option.optionValueId === optionValueId),
+    );
+
+    if (!selectedVariant) return;
+
+    setVariant(selectedVariant);
+  }
+
   return (
     <div>
       <p className="text-2xl font-medium">{variant.price} kr</p>
 
       {product.options.map((option) => (
-        <OptionValueSelector key={option.name} option={option} />
+        <OptionValueSelector key={option.name} option={option} onSelect={handleSelectOptionValue} />
       ))}
 
       <QuantitySelector
