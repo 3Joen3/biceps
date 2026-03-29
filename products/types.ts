@@ -14,5 +14,11 @@ export interface ProductOptionValue {
 }
 
 export interface ProductVariant {
+  options: ProductVariantOption[];
   price: number;
+}
+
+export interface ProductVariantOption {
+  name: string;
+  value: string;
 }
