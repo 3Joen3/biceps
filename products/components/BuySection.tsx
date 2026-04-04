@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Product, ProductVariant } from "../types";
 import { AddCartItemRequest } from "@/carts/types";
-import { AddToCartAsync } from "@/carts/service";
+import { useCartContext } from "@/carts/components/CartContextProvider";
 
 import QuantitySelector from "./QuantitySelector";
 import OptionValueSelector from "./OptionValueSelector";
@@ -15,15 +15,6 @@ interface Props {
 
 export default function BuySection({ product }: Props) {
   const [variant, setVariant] = useState<ProductVariant>(product.variants[0]);
-  const [quantity, setQuantity] = useState<number>(1);
-
-  function decreaseQuantity() {
-    setQuantity((quantity) => Math.max(1, quantity - 1));
-  }
-
-  function increaseQuantity() {
-    setQuantity((quantity) => quantity + 1);
-  }
 
   function handleSelectOptionValue(optionValueId: number) {
     const selectedVariant = product.variants.find((variant) =>
@@ -35,9 +26,21 @@ export default function BuySection({ product }: Props) {
     setVariant(selectedVariant);
   }
 
+  const [quantity, setQuantity] = useState<number>(1);
+
+  function decreaseQuantity() {
+    setQuantity((quantity) => Math.max(1, quantity - 1));
+  }
+
+  function increaseQuantity() {
+    setQuantity((quantity) => quantity + 1);
+  }
+
+  const { addCartItems } = useCartContext();
+
   async function handleAddToCart() {
     const request: AddCartItemRequest[] = [{ productVariantId: variant.id, quantity: quantity }];
-    await AddToCartAsync(request);
+    await addCartItems(request);
   }
 
   return (

@@ -13,6 +13,7 @@ export const montserrat = Montserrat({
 });
 
 import "./globals.css";
+import CartContextProvider from "@/carts/components/CartContextProvider";
 import Header from "@/layout/Header/Header";
 import Footer from "@/layout/Footer";
 import TopBar from "@/layout/TopBar";
@@ -25,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full ${montserrat.className} antialiased`}>
       <body>
-        <Header />
-        <TopBar />
-        {children}
-        <Footer />
+        <CartContextProvider>
+          <Header />
+          <TopBar />
+          {children}
+          <Footer />
+        </CartContextProvider>
       </body>
     </html>
   );
